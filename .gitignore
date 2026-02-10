@@ -1,0 +1,114 @@
+# ==================================================
+# Flutter / Dart
+# ==================================================
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Generated documentation
+**/doc/api/
+
+# ==================================================
+# IDEs
+# ==================================================
+
+# VS Code
+.vscode/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ==================================================
+# Android
+# ==================================================
+android/.gradle/
+android/local.properties
+android/**/build/
+
+# Keystore & signing (DO NOT COMMIT)
+*.jks
+*.keystore
+key.properties
+
+# ==================================================
+# iOS / macOS
+# ==================================================
+
+# CocoaPods
+ios/Pods/
+ios/.symlinks/
+macos/Pods/
+
+# Flutter ephemeral files
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+
+# Generated iOS files
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+
+# ==================================================
+# Web
+# ==================================================
+web/.dart_tool/
+web/build/
+
+# ==================================================
+# Windows
+# ==================================================
+windows/flutter/ephemeral/
+windows/**/build/
+
+# ==================================================
+# Linux
+# ==================================================
+linux/flutter/ephemeral/
+linux/**/build/
+
+# ==================================================
+# Logs & temp files
+# ==================================================
+*.log
+*.tmp
+*.swp
+*.class
+*.pyc
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# ==================================================
+# Crash / Obfuscation / Symbols
+# ==================================================
+app.*.symbols
+app.*.map.json
+
+# ==================================================
+# Misc
+# ==================================================
+.history
+.svn/
+.atom/
+.swiftpm/
+migrate_working_dir/
