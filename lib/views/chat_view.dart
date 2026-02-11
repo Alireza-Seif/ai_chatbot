@@ -10,8 +10,64 @@ class ChatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text('chat view')),
-        body: Column(children: [Spacer(), _buildInputMessage()]),
+        appBar: AppBar(
+          title: Text('ChatBot 💻'),
+          centerTitle: true,
+          backgroundColor: Colors.blue[400],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.only(
+              bottomLeft: Radius.circular(8),
+              bottomRight: Radius.circular(8),
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Obx(() {
+                return ListView.builder(
+                  itemCount: chatViewModel.messages.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final message = chatViewModel.messages[index];
+                    return Align(
+                      alignment: message.isFromUser
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          color: message.isFromUser
+                              ? Colors.blue[400]
+                              : Colors.grey[400],
+                          borderRadius: message.isFromUser
+                              ? BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                )
+                              : BorderRadius.only(
+                                  bottomRight: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                ),
+                        ),
+                        child: Text(
+                          message.text,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    );
+                  },
+                );
+              }),
+            ),
+            _buildInputMessage(),
+          ],
+        ),
       ),
     );
   }
@@ -37,8 +93,9 @@ class ChatView extends StatelessWidget {
             onPressed: () {
               chatViewModel.addMessage(
                 message: textEditingController.text,
-                isFromUser: true,
+                isFromUser: false,
               );
+              textEditingController.clear();
             },
             icon: Icon(Icons.send),
           ),

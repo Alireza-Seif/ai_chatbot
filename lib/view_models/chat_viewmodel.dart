@@ -5,6 +5,6 @@ class ChatViewModel extends GetxController {
   var messages = <MessageModel>[].obs;
 
   void addMessage({required String message, required bool isFromUser}){
-    messages.add(MessageModel(message: message, isFromUser: isFromUser));
+    messages.add(MessageModel(text: message, isFromUser: isFromUser));
   }
 }

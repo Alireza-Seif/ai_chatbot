@@ -1,6 +1,6 @@
 class MessageModel {
-  final String message;
+  final String text;
   final bool isFromUser;
 
-  MessageModel({required this.message, required this.isFromUser});
+  MessageModel({required this.text, required this.isFromUser});
 }
